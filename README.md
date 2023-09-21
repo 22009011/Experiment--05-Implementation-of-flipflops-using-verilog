@@ -102,23 +102,39 @@ Q(t+1)=T′Q(t)+TQ(t)′
 ⇒Q(t+1)=T⊕Q(t)
 
 ### Procedure
-/* write all the steps invloved */
+1.Open Quartus II and select new project and choose the file location.
 
+2.Module Declaration. Module should have the file name.
+
+3.Declare Inputs and outputs.
+
+4.Use assign declaration and wire to define the functionality of logic circuits.
+
+5.End the program with endmodule. 6.Run the program and choose RTL viewer to get RTL realization.
 
 
 ### PROGRAM 
-/*
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: THANJIYAPPAN.K
+RegisterNumber: 212222240108
 
+module ex5(S,R,Q,Qbar,CLK);
+input S,R,CLK;
+output reg Q,Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge CLK)
+begin 
+Q = S|(Q&(~R));
+Qbar=R|(Qbar&(~S));
+end 
+endmodule  
 
-
-
-
+```
 
 ### RTL LOGIC FOR FLIPFLOPS 
+![268427571-6a72f18c-9fb6-458c-933e-506101cb6da9](https://github.com/22009011/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118343461/1e7c06cf-bccb-4b8a-bc6c-a65c11f5bc94)
 
 
 
@@ -128,7 +144,9 @@ RegisterNumber:
 
 
 
-### TIMING DIGRAMS FOR FLIP FLOPS 
+### WAVE FORM:
+![268427622-72bef555-31f4-487b-98bb-3c5e5da50256](https://github.com/22009011/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118343461/890cfd96-013c-4877-a554-b38f1a75f066)
+
 
 
 
