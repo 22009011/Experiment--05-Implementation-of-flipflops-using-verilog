@@ -144,6 +144,23 @@ q=(j&(~q))|((~k)&q);
 qbar=((~j)&qbar)|(k &(~qbar));
 end 
 endmodule
+
+T flip flop:
+module ex5T(T,clk,Q,Qbar);
+input T,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge clk)
+begin
+Q=(T&(~Q))|((~T)&Q);
+Qbar=((~T)&Qbar)|(T&(~Qbar));
+end
+endmodule
+
+D flip flop:
+
 ```
 
 ### RTL LOGIC FOR FLIPFLOPS 
@@ -152,6 +169,8 @@ endmodule
 #### JK flip flop:
 ![image](https://github.com/22009011/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118343461/76f8cfa9-23d8-4883-b334-23700fbd4430)
 
+#### T flip flop:
+![image](https://github.com/22009011/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118343461/5a36f597-a46f-439d-bfce-b99e90346a70)
 
 
 
