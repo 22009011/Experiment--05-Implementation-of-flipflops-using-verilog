@@ -118,7 +118,7 @@ Q(t+1)=T′Q(t)+TQ(t)′
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
 Developed by: THANJIYAPPAN.K
 RegisterNumber: 212222240108
-
+#### SR flip flop:
 module ex5(S,R,Q,Qbar,CLK);
 input S,R,CLK;
 output reg Q,Qbar;
@@ -131,10 +131,26 @@ Qbar=R|(Qbar&(~S));
 end 
 endmodule  
 
+
+module ex5jk(j,k,clk,q,qbar);
+input j,k,clk;
+output reg q;
+output reg qbar;
+initial q=0;
+initial qbar=1;
+always @(posedge clk)
+begin
+q=(j&(~q))|((~k)&q);
+qbar=((~j)&qbar)|(k &(~qbar));
+end 
+endmodule
 ```
 
 ### RTL LOGIC FOR FLIPFLOPS 
+### SR flip flop:
 ![268427571-6a72f18c-9fb6-458c-933e-506101cb6da9](https://github.com/22009011/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118343461/1e7c06cf-bccb-4b8a-bc6c-a65c11f5bc94)
+#### JK flip flop:
+![image](https://github.com/22009011/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118343461/76f8cfa9-23d8-4883-b334-23700fbd4430)
 
 
 
@@ -145,7 +161,12 @@ endmodule
 
 
 ### WAVE FORM:
+#### SR flip flop:
 ![268427622-72bef555-31f4-487b-98bb-3c5e5da50256](https://github.com/22009011/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118343461/890cfd96-013c-4877-a554-b38f1a75f066)
+
+#### JK flip flop:
+![image](https://github.com/22009011/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118343461/b95b2a05-d2f8-496a-bea9-ccad2d37f60f)
+
 
 
 
